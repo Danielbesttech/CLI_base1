@@ -1,7 +1,7 @@
 APP_ENV = development
 
 URL_SITE = 'https://localhost/developer'
-
+URL_ADM  = 'https://localhost/developer/admin'
 DB_HOST     = 'localhost'
 DB_NAME     = 'emporiotrembao'
 DB_USER     = 'ss8o5ana9921fo'

@@ -15,31 +15,36 @@
 
 <body>
 
-  <section class="login-area">
+  <section id="section_login" class="login-area">
     <center>
 
-      <!-- form action="#" method="post" -->
-      <div class="titulo">
-        <h4>Área de Login</h4>
-      </div>
-      <div class="area-dados">
-        <label for="login">Login <span>*</span></label>
-        <input type="text" placeholder="Digite seu login " name="login" id="login">
-      </div>
-      <div class="area-dados">
-        <label for="password">Senha <span>*</span></label>
-        <div class="senha">
-          <input type="password" placeholder="Digite sua senha" name="password" id="password">
-          <button title="Exibir a senha" class="bulleyes" onclick="verSenha();"><i class="far fa-eye"></i></button>
+      <form id="formLogin" method="post" onsubmit="return false">
+        <div class="titulo">
+          <h4>Área de Login</h4>
+          <span class="error login-error"></span>
         </div>
-      </div>
-      <footer>
-        <button title="Efetuar Login" onclick="efetuarLogin();" class="btn-logar">Logar</button>
-        <div class="esqueci-senha">
-          <a href="#">esqueci minha senha </a>
+        <div class="area-dados">
+          <label for="login">Login <span>*</span></label>
+          <input type="text" placeholder="Digite seu login " name="login" id="login" required>
+          <span class="error"></span>
         </div>
-      </footer>
-      <!-- /form -->
+        <div class="area-dados">
+          <label for="password">Senha <span>*</span></label>
+          <div class="senha">
+            <div class="input_senha">
+              <input type="password" placeholder="Digite sua senha" name="password" id="password" required>
+              <span class="error"></span>
+            </div>
+            <button title="Exibir a senha" class="bulleyes" onclick="verSenha();"><i class="far fa-eye"></i></button>
+          </div>
+        </div>
+        <footer>
+          <button title="Efetuar Login" onclick="efetuarLogin();" class="btn-logar">Logar</button>
+          <div class="esqueci-senha">
+            <a href="#">esqueci minha senha </a>
+          </div>
+        </footer>
+      </form>
     </center>
   </section>
 
@@ -72,23 +77,45 @@
     }
 
     function efetuarLogin() {
-      var login = document.getElementById('login').value;
-      var senha = document.getElementById('password').value;
-      var preparaDados = {
-        "login": login,
-        "senha": senha
-      }
-      var dadosString = JSON.stringify(preparaDados);
-      var dados = btoa(dadosString)
 
-      var hostnameHref = location.href;
-      var urlLogar = hostnameHref.replace("login", "logar");
-      $.ajax({
-        type: "POST",
-        data: preparaDados,
-        url: urlLogar,
-        success: console.log(preparaDados)
-      });
+      let validar = validarForm("formLogin")
+      if (validar) {
+        var login = document.getElementById('login');
+        var senha = document.getElementById('password');
+        var error = document.querySelector('.login-error');
+        var preparaDados = {
+          "login": login.value,
+          "senha": btoa(senha.value)
+        }
+
+
+        var hostnameHref = location.href;
+        var urlLogar = hostnameHref.replace("login", "logar");
+        $.ajax({
+          type: "POST",
+          data: preparaDados,
+          url: urlLogar,
+          beforeSend: (data) => {
+            inserirLoading("section_login")
+            login.value = ""
+            senha.value = ""
+          },
+          success: function (data) {
+            data = JSON.parse(data)
+            removerLoading();
+            if (data[0] != true) {
+              error.innerHTML = data[1]
+              //limpar campos e informar erro
+            } else if (data[0] == true) {
+              window.location.replace(data[1])
+
+            } else {
+              console.log("retorno inconsistente")
+              console.log(data)
+            }
+          }
+        });
+      }
     }
   </script>
 </body>

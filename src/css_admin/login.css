@@ -99,3 +99,44 @@ button.btn-logar:hover{
 .bulleyes:hover{
   transform: scale(1.03);
 }
+
+.senha {
+  display: flex;
+  width: 105%;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.input_senha {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-error{
+  font-size: 0.8rem;
+  color: orangered;
+}
+
+
+.div-loading {
+  position: absolute;
+  top: 0;
+  background-color: #33333322;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.div-loading .loading {
+  border-top: 10px black solid;
+  border-bottom: 10px white solid;
+  border-left: 10px white solid;
+  border-right: 10px white solid;
+  border-radius: 50%;
+  background: none;
+  overflow: hidden;
+  animation: rotating infinite linear 2s;
+  height: 60px;
+  width: 60px;
+}

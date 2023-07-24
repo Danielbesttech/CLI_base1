@@ -16,7 +16,6 @@ function validarForm(id_form) {
     // logica para verificar se existem erros
     function verifyErrors() {
       let foundError = false;
-
       for (let error in field.validity) {
         // se não for customError
         // então verifica se tem erro
@@ -44,6 +43,10 @@ function validarForm(id_form) {
           valueMissing: "Por favor, selecione uma data",
           typeMismatch: "Por favor, preencha um email válido",
         },
+        password: {
+          valueMissing: "Por favor, insira a senha",
+          typeMismatch: "Por favor, preencha uma senha válido",
+        }
       };
 
       return messages[field.type][typeError];
@@ -51,7 +54,6 @@ function validarForm(id_form) {
 
     function setCustomMessage(message) {
       const spanError = field.parentNode.querySelector("span.error");
-
       if (message) {
         spanError.classList.add("active");
         spanError.innerHTML = message;
@@ -96,7 +98,7 @@ function inserirLoading(id_div) {
 
   div.insertAdjacentHTML(
     "beforeEnd",
-    `<div id='div-loading' style="width:${width}px; height:${height}px" class='div-loading'> <div class='loading'>4</div> </div>`
+    `<div id='div-loading' style="width:${width}px; height:${height}px" class='div-loading'> <div class='loading'></div> </div>`
   );
 }
 

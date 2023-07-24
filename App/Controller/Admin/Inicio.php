@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Middlewares\Auth as MiddlewaresAuth;
 use App\Model\geral;
+use App\Model\Usuarios;
 use App\Utils\TwigUtils;
 class Inicio
 {
@@ -20,6 +21,9 @@ class Inicio
     $this->twig   = TwigUtils::carregaTwig("views/admin", $arrViews);
   }
 
+// use App\Utils\TestTrait;
+
+
   public function Home($data){
     // die(geral::pre($_SESSION));
     MiddlewaresAuth::verificaLogado();
@@ -29,6 +33,10 @@ class Inicio
   public function Login($data){
     // geral::pre($_SESSION);
     // MiddlewaresAuth::logar(true);
+
+
+
+    // $add = $Usuario->inserir(["roleid"=>2, "nome"=>"Teste Oversee", "ovrusr"=>"Oversee", "ovrpwd"=>123]);
     echo $this->twig->render('@login/index.html.twig');
   }
 
@@ -38,9 +46,16 @@ class Inicio
   }
 
   public function Logar($data){
-    geral::pre($data);
-    geral::pre(base64_decode($data));
-
-
+    // $login = base64_decode($data["login"]);
+    $login = $data["login"];
+    $senha = base64_decode($data["senha"]);
+    $Usuario = new Usuarios();
+    $logando = $Usuario->login(["ovrusr"=>$login,"ovrpwd"=>$senha]);
+    if(!$logando){
+      print_r(json_encode(["0"=> 0, "1"=>" login e/ou senha incorretos! "]));
+      return false;
+    }
+      print_r(json_encode([ "0"=>true,"1" => $_ENV['URL_ADM']]));
+      return true;
   }
 }
