@@ -1,0 +1,24 @@
+{% extends '@base/main.html.twig' %} {% block title %}Produtos{% endblock %} {% block header %}
+{{ parent() }}
+
+<link rel="stylesheet" href="/developer/src/css/produtos.css" />
+{% endblock %} {% block content %}
+<section class="section-produtos">
+  <div class="page-title">
+    <h1 class="head-titulo">{{ categoria }}</h1>
+  </div>
+  <div class="container-produtos">
+    <div class="cards-produtos">
+      {% for SubCategoria, Produtos in TiposCategoriasProdutos %}
+      <div class="div-subcategoria">
+        <div class="subtitulo-title">
+          <span class="subtitulo-categoria">{{ SubCategoria }}</span>
+        </div>
+        <div class="body-categoria">{% include '@produto/card.html.twig' with Produtos %}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

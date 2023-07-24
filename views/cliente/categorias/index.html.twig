@@ -1,0 +1,41 @@
+<section class="section-produtos">
+  <div class="page-title">
+    <h1 class="head-titulo" data-aos="fade-right">{{ categoria }}</h1>
+  </div>
+  <div class="container-produtos">
+    <div class="cards-produtos">
+      {% for redes in RedesSociais %}
+      <div class="div-subcategoria" data-aos="fade-up">
+        <div class="subtitulo-title">
+          <span class="subtitulo-categoria"><?= $key ?></span>
+        </div>
+        <div class="body-categoria">
+          {% for redes in RedesSociais %}
+          <div class="div-card-produto">
+            <div class="card-produto <?= $promo ?>">
+              <div class="card-imagem" data-title="Clique aqui para visualizar o produto" onclick="modalVerProduto.abrir('<?= $dataProduto ?>', pageHash)">
+                <img class="imagem-produto" src="<?= $img_produto ?>" alt="" />
+                <figcaption class="legenda-figure-produto"><i class="fas fa-expand"></i>&nbsp;Expandir</figcaption>
+              </div>
+              <div class="card-produto-body">
+                <div class="nome-produto">
+                  <?= $titulo ?>
+                </div>
+                <div class="descricao-produto"><?= $descricao ?></div>
+                <div class="valor-produto">
+                  R$
+                  <?= $preco ?>
+                </div>
+                <div class="comprar-produto">
+                  <button class="button-comprar" value="Comprar" onclick="modalAdicionar.abrir('<?= $dataProduto ?>', pageHash)">Comprar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

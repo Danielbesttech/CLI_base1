@@ -1,0 +1,125 @@
+{% extends '@base/main.html.twig' %}
+
+{% block title %}Contato{% endblock %}
+
+{% block header %}
+{{ parent() }}
+
+<link rel="stylesheet" href="/developer/src/css/contato.css" />
+{% endblock %} {% block content %}
+<section class="section-contato">
+  <div class="page-title">
+    <span class="head-titulo">Contato</span>
+  </div>
+  <div class="container-contato">
+    <div class="body-contato">
+      <div class="div-funcionamento">
+        <div class="subtitulo-categoria">Contato</div>
+        <div class="body-funcionamento">
+          <div class="funcionamento">
+            <div class="subtitulo-funcionamento">subtitulo1_contato</div>
+            <div class="txt-functionamento">descricao1_contato</div>
+          </div>
+
+          <div class="funcionamento">
+            <div class="subtitulo-funcionamento">
+              {{ subtitulo2_contato }}
+            </div>
+            <div class="txt-functionamento">
+              {{ descricao2_contato }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div-funcionamento">
+        <div class="subtitulo-categoria">Delivery</div>
+        <div class="body-funcionamento">
+          <div class="funcionamento">
+            <div class="subtitulo-funcionamento">Faça seu pedido pelo nosso whatsapp:</div>
+            <div class="div-txt-functionamento">
+              <a class="txt-functionamento contato-whatsapp" href="{{ linkWhatsapp }}" target="_blank">{{ whatsapp }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="como-chegar-contato">
+    <div class="localizacao">
+      <div class="titulo-endereco" onclick="ChamarFormularioContato()">Nos envie uma mensagem!</div>
+    </div>
+    <div class="form-contato">
+      <form id="frm" onsubmit="return false">
+        <h2>Entrar na lista</h2>
+
+        <div class="input">
+          <input required type="text" id="nome" name="nome" />
+          <label>Nome</label>
+          <span class="error"></span>
+        </div>
+
+        <div class="input">
+          <input required type="email" id="email" name="email" />
+          <label>Email</label>
+          <span class="error"></span>
+        </div>
+        <div class="input">
+          <input required type="date" id="data" name="data" />
+          <label>Data</label>
+          <span class="error"></span>
+        </div>
+
+        {#
+        <div id="dropzone" class="dropzone"></div>
+        #}
+
+        <button type="button" onclick="SalvarContato()">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="como-chegar-contato">
+    <div class="localizacao">
+      <div class="titulo-endereco">Localização</div>
+      <div class="body-endereco">
+        <div class="info-endereco">
+          <?= $enderecoCompleto ?>
+        </div>
+      </div>
+    </div>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3661.359423659917!2d-46.03870398255615!3d-23.411380100000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cdce4a1af911b3%3A0xea2a6b746253ab8a!2sR.%20Vinte%20e%20Tr%C3%AAs%20de%20Maio%2C%2020%20-%20Centro%2C%20Guararema%20-%20SP%2C%2008900-000!5e0!3m2!1spt-BR!2sbr!4v1648576923892!5m2!1spt-BR!2sbr" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+{% endblock %} {% block script %}
+{{ parent() }}
+
+<script>
+  function SalvarContato() {
+    if (validarForm("frm")) {
+      var frm = document.getElementById("frm");
+      var data = new FormData(frm);
+
+      $.ajax({
+        url: "/contato/salvar/",
+        type: "POST",
+        data: data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        method: "POST",
+        type: "POST", // For jQuery < 1.9
+        beforeSend: (data) => {
+          inserirLoading("frm");
+        },
+        success: (data) => {
+          console.log(data);
+          removerLoading();
+        },
+      }).done((e) => { });
+    }
+  }
+</script>
+
+{% endblock script %}

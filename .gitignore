@@ -1,0 +1,5 @@
+vendor
+old_config.php
+old_db_conec_db.php
+old_define_dbs.php
+.vscode

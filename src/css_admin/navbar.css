@@ -1,0 +1,202 @@
+header {
+  position: fixed;
+  background: #4a4a4a;
+  padding: 20px;
+  width: calc(100vw - 85px);
+  height: 30px;
+  margin: 12px;
+  border-radius: 25px;
+}
+
+.area_esquerda{
+  background: transparent;
+}
+
+.area_esquerda h3 {
+  color: #c4c4c4;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.area_esquerda span {
+  color: #1DC4E7;
+  /* margin-left: 55px; */
+}
+
+.btn_logout{
+  padding: 5px;
+  background: #19B3D3;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  transition-property: background;
+  filter: var(--filter-nav-btn);
+  text-shadow: var(--shadow-nav-btn);
+  width: 4rem;
+  height: 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn_logout:hover{
+  background: #0D9DBB;
+}
+
+
+.sidebar{
+  background: var(--color-bg-primary);
+  padding-top: 10px;
+  position: fixed;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  transition: left 0.5s;
+  margin-top: 95px;
+}
+
+.sidenav {
+  background: #4a4a4a;
+  margin: -9px 12px;
+  border-radius: 25px;
+}
+
+.sidebar .logotipo{
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+.sidebar h4 {
+  color: #c4c4c4;
+  margin: 0 0 20px 0;
+}
+
+.sidebar a{
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 60px;
+  text-decoration: none;
+  padding-left: 40px;
+  box-sizing: border-box;
+  transition: all 0.3s;
+  text-shadow: var(--shadow-nav-btn);
+  filter: var(--filter-nav-btn);
+}
+
+.sidebar a:hover{
+  background: #19B3D3;
+}
+
+.sidebar i{
+  padding-right: 10px;
+}
+
+label #btn_sidebar{
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  transition: color 0.3s;
+  filter: var(--filter-nav-btn);
+  text-shadow: var(--shadow-nav-btn);
+  /* position: fixed; */
+  /* z-index: 1; */
+  /* left: 300px; */
+  /* margin: 4px 0; */
+}
+
+label #btn_sidebar:hover{
+  color: #19B3D3;
+}
+
+
+.isChekedsidebar{
+  left: -190px;
+}
+
+.isChekedSidebarASpan{
+  display: none;
+}
+
+.isChekedSidebarA {
+  font-size: 20px;
+  margin-left: 145px;
+  width: 80px !important;
+}
+
+#check_menu{
+  display: none;
+}
+
+.logotipo{
+  max-height: 30px;
+}
+
+.empresa {
+  width: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+.hide{
+  max-height: 0;
+  opacity: 0;
+}
+
+
+.dropdown__menu{
+  transition: all 0.5s;
+  border: 1px solid #eee;
+  width: 120px;
+  position: absolute;
+  max-height: 100px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.dropdown__menu button{
+  display: block;
+  padding: 4px 10px;
+  font-size: 16px;
+  border: none;
+  color: #4a4a4a;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.dropdown__menu button span{
+  margin-right: 5px;
+}
+
+.dropdown__menu button:hover{
+  /* background: #c4c4c4; */
+  transform: scale(1.1);
+}
+
+.setadrop {
+  font-size: 0.8rem;
+  margin: 0 0 0 10px;
+}
+/* .dropdown__button span:before {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: none;
+  border-left: 2px solid #777;
+  border-bottom: 2px solid #777;
+  transform: rotate(-45deg) translateY(-50%);
+  top: 50%;
+  right: -18px;
+} */

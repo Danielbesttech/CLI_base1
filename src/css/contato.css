@@ -1,0 +1,301 @@
+.section-contato {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: var(--second);
+  padding: 0 0 5rem;
+  /* background: url(../assets/images/bg-contato.jpg); */
+}
+
+.container-contato {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 0 5rem;
+}
+
+.titulo-contato {
+  font-size: 5rem;
+  letter-spacing: 5px;
+  margin: 0 0 5rem;
+}
+
+.body-contato {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 60%;
+}
+
+.dados-contato {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: solid red; */
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+}
+
+.cidade-contato {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.body-endereco {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+.div-endereco {
+  color: rgb(0, 0, 0);
+}
+
+.info-endereco {
+  line-height: 3rem;
+  text-align: center;
+}
+
+/* telefone */
+.telefones-contato {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.titulo-telefone {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.body-telefone {
+  display: flex;
+  font-size: 1.4rem;
+  height: 6rem;
+  /* flex-direction: column; */
+}
+
+div > div > i {
+  padding: 0 1rem 0;
+  font-size: 2.5rem;
+}
+
+.telefone-icons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.telefone-numero {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.titulo-funcionamento {
+  font-size: 2.5rem;
+  line-height: 4rem;
+  font-weight: bold;
+}
+
+.subtitulo-funcionamento {
+  font-size: 1.8rem;
+  line-height: 3rem;
+  font-weight: 500;
+  color: black;
+}
+
+.txt-functionamento {
+  color: rgb(0, 0, 0);
+  line-height: 3rem;
+}
+
+.contato-whatsapp {
+  border-bottom: solid 1px;
+  color: var(--color-secundaria);
+  transition: 0.5s all;
+}
+
+.contato-whatsapp:hover {
+  color: var(--color-secundaria);
+  font-size: 1.8rem;
+}
+
+.funcionamento {
+  margin: 1rem 0;
+}
+
+.body-funcionamento {
+  display: flex;
+  font-size: 1.4rem;
+  flex-direction: column;
+  margin: 2rem 0 0;
+}
+
+.btn-contato {
+  color: white;
+  padding: 1rem 2rem;
+  background: #25d366;
+  font-size: 2rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 25rem;
+  max-width: 80%;
+  font-weight: 500;
+}
+
+.como-chegar-contato {
+  /* border: solid purple; */
+  width: 100%;
+}
+
+.div-funcionamento {
+  flex: 0 1 calc(45% - 1rem);
+}
+
+/* localizacao */
+
+.localizacao {
+  background-color: var(--primary-titulo);
+  color: #fff;
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.endereco-contato {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.titulo-endereco {
+  font-size: 5rem;
+  letter-spacing: 5px;
+}
+
+.como-chegar-contato iframe {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  min-height: 50rem;
+}
+
+/* banner */
+
+.section-banner-contato {
+  background: linear-gradient(rgba(0, 0, 0, 15%), rgba(0, 0, 0, 15%)), url("../assets/images/banner-news.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 25vh;
+  max-height: 60vh;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .como-chegar-contato {
+    flex: 1 100%;
+  }
+
+  .body-contato {
+    width: 80%;
+    justify-content: unset;
+  }
+}
+
+/*  */
+
+.form-contato form {
+  background: rgba(255, 255, 255, 0.03);
+
+  width: 100%;
+  max-width: 500px;
+
+  margin: 32px auto;
+  padding: 32px 64px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.form-contato form h2 {
+  margin-bottom: 32px;
+}
+
+.form-contato div.input {
+  margin-bottom: 24px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.form-contato input,
+.form-contato button {
+  /* reset appeareance */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* box */
+  width: 100%;
+  padding: 16px 0;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  background-color: transparent;
+  outline: none;
+
+  /* text */
+  color: var(--text-color);
+  font-size: 1em;
+  /* border: solid 1px #333; */
+  /* border-radius: 5px; */
+}
+
+.form-contato button {
+  margin-top: 16px;
+  background-color: var(--primary-color);
+}
+
+.form-contato input ~ label {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  color: black;
+  transition: 0.4s;
+}
+
+.form-contato input[type="date"] ~ label {
+  top: 0;
+}
+
+
+.form-contato input:focus ~ label,
+.form-contato input:valid ~ label {
+  transform: translateY(-24px);
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+}
+
+.form-contato .input span.error {
+  display: flex;
+  padding: 0;
+  background-color: rgba(255, 0, 0, 0.2);
+  border: solid 1px #ccc;
+}
+
+.form-contato .input span.error.active {
+  border: 1px solid red;
+  padding: 0.4em;
+}

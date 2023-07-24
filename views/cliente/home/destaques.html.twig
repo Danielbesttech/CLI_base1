@@ -1,0 +1,22 @@
+<div class="swiper swiper-destaques">
+  <div class="swiper-wrapper">
+    {% for Produto in Destaques %}
+    <div class="swiper-slide">
+      <div class="cards-destaque">
+        <div class="card-bg-destaque" style="background-image: url('src/images/categorias/{{ Produto.id_categoria }}/{{ Produto.id_tipo_produto }}/{{ Produto.id }}/{{Produto.img_produto}}'); background-size: contain; background-position: center">
+        </div>
+        <div class="div-card-destaque" data-before="R$ " style="background-image: url('src/images/categorias/{{ Produto.id_categoria }}/{{ Produto.id_tipo_produto }}/{{ Produto.id }}/{{Produto.img_produto}}'); background-position: center; background-repeat: no-repeat; background-size: contain">
+          <div class="card-destaque">
+            <div class="nome-destaque">TESTE</div>
+            <div class="div-btn-destaque">
+              <a class="button-comprar" title="Botão Comprar" onclick="modalAdicionar.abrir('<?= $dataProduto ?>', pageHash)">Comprar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="swiper-button-next color-primary" id="swiper-button-next"></div>
+  <div class="swiper-button-prev color-primary" id="swiper-button-prev"></div>
+</div>

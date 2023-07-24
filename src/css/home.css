@@ -1,0 +1,485 @@
+.section-info-home,
+.section-header-info,
+.section-formas-pagamentos,
+.section-historia-home,
+.section-banner-news,
+.section-categorias-home,
+.section-restaurante-home,
+.section-lancamento-home {
+  background-color: white !important;
+  z-index: 1;
+}
+
+.section-header-home {
+  aspect-ratio: 4/1;
+}
+
+[class^="div-bg-home"] {
+  position: fixed;
+  aspect-ratio: 4/1;
+  width: 100%;
+  z-index: -1;
+}
+
+.div-bg-home-mobile {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .div-bg-home {
+    display: none;
+  }
+
+  .section-header-home {
+    aspect-ratio: 4/2 !important;
+  }
+
+  .div-bg-home-mobile {
+    display: block;
+    aspect-ratio: 4/2;
+  }
+}
+
+.img-banner-header {
+  max-width: 100%;
+}
+
+.section-header-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 5rem 0;
+}
+
+.home-header {
+  letter-spacing: 0.5rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[class*="home-title"] {
+  color: white;
+  text-align: center;
+}
+
+.home-title__1 {
+  font-size: 1rem;
+}
+
+.home-title__2 {
+  font-size: 2rem;
+}
+
+.home-title__3 {
+  font-size: 3rem;
+}
+
+.home-title__4 {
+  font-size: 4rem;
+}
+
+.home-sub-title {
+  color: black;
+  text-align: center;
+  font-size: 3rem;
+  margin: 0 0 2rem;
+}
+
+.home-sub-detalhes {
+  color: black;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.home-destaque {
+  color: var(--primary-titulo);
+}
+
+.section-info-home {
+  height: 60rem;
+  position: absolute;
+  top: 55rem;
+  width: 100%;
+}
+
+.home-banner {
+  text-align: center;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-banner-img {
+  width: 90rem;
+  max-width: 100%;
+  border-radius: 25px;
+}
+
+.info-titulo {
+  text-align: center;
+}
+
+/* pagamentos */
+
+.container-formas-pagamentos {
+  padding: 1rem;
+}
+
+.body-formas-pagamentos {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0 0;
+  /* background: white; */
+  border-radius: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.titulo-formas-pagamentos {
+  text-align: center;
+  color: #dddddd;
+  font-size: 3rem;
+}
+
+.subtitulo-formas-pagamentos {
+  font-size: 2rem;
+  color: #dddddd;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.section-formas-pagamentos {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 69%), rgba(0, 0, 0, 69%)),
+    url(../assets/images/pagamentos/bg-pagamentos.jpg);
+  background-size: cover;
+  /* padding: 0 0 5rem; */
+}
+
+.formas-pagamentos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  height: 5rem;
+  width: 7rem;
+  border-radius: 15px;
+  margin: 1rem;
+}
+
+/* lançamentos */
+
+.section-lancamento-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-lancamento {
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lancamento-title {
+  width: 100%;
+}
+
+.cards-destaque {
+  display: flex;
+  justify-content: center;
+}
+
+.div-card-destaque {
+  flex: 1;
+  box-sizing: border-box;
+  height: 40vh;
+  cursor: grab;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.div-card-destaque:active {
+  cursor: grabbing;
+}
+
+.div-card-destaque::before {
+  content: attr(data-before);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  height: 4rem;
+  width: 35rem;
+  position: absolute;
+  top: 55px;
+  left: -100px;
+  background: rgba(0, 0, 0, 0.69);
+  transform: rotate(315deg);
+}
+
+.card-destaque {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  transition: 1s all;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  align-items: center;
+}
+
+.nome-destaque {
+  color: var(--primary);
+  font-size: clamp(1.5vw, (3rem - 1vw), 30px);
+  line-height: 4rem;
+  width: 70%;
+}
+.descricao-destaque {
+  color: white;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.swiper-destaques {
+  padding: 3rem 0 0;
+}
+
+.card-bg-destaque {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+/* produtos */
+
+/* News */
+.section-banner-news {
+  background: linear-gradient(rgba(0, 0, 0, 15%), rgba(0, 0, 0, 15%)),
+    url("../assets/images/banner-news.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-height: 60vh;
+  display: flex;
+  justify-content: center;
+  margin: 5rem 0;
+}
+
+.container-news {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagem-banner-news {
+  flex: 0 1 calc(10% - 1em);
+}
+
+.text-banner-news {
+  flex: 0 1 calc(10% - 1em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-banner-news {
+  flex: 0 1 calc(70% - 1em);
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+/* Categorias */
+.section-categorias-home {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 0;
+}
+
+.categorias-title {
+  margin: 0 0 3rem;
+}
+
+.categoria-base-size {
+  flex: 0 1 calc(100% / 4);
+}
+
+[class^="div-card-categoria"] {
+  display: flex;
+  margin: 1rem;
+  transition: 0.5s all;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+[class^="div-card-categoria"]:hover .body-card-categoria,
+[class^="div-card-categoria"]:focus .body-card-categoria {
+  -ms-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+
+  box-shadow: 0px 4px 16px 0px #aaaaaa;
+}
+
+[class^="div-card-categoria"]:hover .body-card-categoria:before,
+[class^="div-card-categoria"]:focus .body-card-categoria:before {
+  display: block;
+}
+
+[class^="div-card-categoria"]:hover a,
+[class^="div-card-categoria"]:focus a {
+  display: block;
+}
+
+.body-card-categoria:before {
+  content: "";
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.categoria-left {
+  justify-content: flex-end;
+}
+
+.categoria-right {
+  align-items: flex-start;
+  justify-content: flex-start !important;
+}
+
+.body-card-categoria {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  aspect-ratio: 4/3;
+}
+
+.btn-categoria {
+  font-size: 3rem;
+  color: #ffffff !important;
+  font-family: sans-serif;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+  cursor: pointer;
+}
+
+.cards-categorias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Restaurante */
+
+.section-restaurante-home {
+  padding: 0 0 5rem;
+}
+
+.body-restaurant-banner {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header-restaurante {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo-header-restaurante {
+  font-size: 3rem;
+  color: var(--primary);
+}
+
+.cards-restaurante {
+  color: white;
+  font-size: 2rem;
+}
+
+[class*="banner-restaurante"] {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.img-banner-restaurante {
+  width: 100%;
+  aspect-ratio: 4/1;
+}
+
+.img-banner-restaurante-mobile {
+  width: 100%;
+  aspect-ratio: 4/2;
+}
+
+.espaco-bottom {
+  padding: 0 0 5rem;
+  z-index: 1;
+  background: white;
+}
+
+.swiper-restaurante-mobile {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  /* banner */
+  .container-news {
+    height: 45vh;
+    flex-direction: column;
+  }
+
+  /* categoria */
+  [class^="div-card-categoria"] {
+    flex: 1 100%;
+  }
+
+  .body-card-categoria {
+    display: block;
+  }
+
+  .categoria-base-size {
+    flex: 0 1 calc(100% - 1rem);
+  }
+
+  .swiper-restaurante-mobile {
+    display: block;
+  }
+
+  .swiper-restaurante {
+    display: none;
+  }
+}

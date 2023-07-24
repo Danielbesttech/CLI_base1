@@ -1,0 +1,154 @@
+.li-aside ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #2d3338;
+}
+
+.li-inside ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #363e44;
+}
+
+.fotoRedondaAdm {
+  max-width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.fotoQuadradaAdm {
+  max-width: 120px;
+  max-height: 80px;
+}
+.fotoCadastroAdm {
+  max-width: 60px;
+}
+.italico {
+  font-style: italic;
+}
+.negrito {
+  font-weight: bold;
+}
+
+.btnVoltarAdm {
+  margin: 0 0 0 1em;
+}
+
+[class*="btn-voltar"] {
+  margin: 0 1em;
+}
+
+.btn-conteudo {
+  background-color: #754ba3;
+  color: #ffffff;
+  border-color: #754ba3;
+}
+
+.btn-conteudo:hover {
+  background-color: #a368e5;
+  color: #ffffff;
+}
+
+/* alterar */
+.font-padrao .ck-content {
+  font-size: 18px;
+}
+
+/* limites */
+.div-limites {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  /* width: 70vw; */
+  max-width: 100%;
+}
+
+.prop {
+  border-bottom: solid gainsboro;
+  margin: 0 0 1rem;
+}
+
+/*  */
+#group {
+  position: relative;
+}
+
+.switch {
+  position: relative;
+  border: 0;
+  padding: 0;
+  width: 300px;
+  font-size: 22px;
+  color: #222;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.switch legend {
+  float: left;
+  width: 40%;
+  padding: 7px 10% 3px 0;
+  text-align: right;
+}
+
+.switch input {
+  position: absolute;
+  opacity: 0;
+}
+
+.switch label {
+  position: relative;
+  z-index: 2;
+  width: 25%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #64676b;
+  text-shadow: 0 1px 0 #000;
+  cursor: pointer;
+  transition: color 0s ease 0.1s;
+}
+
+.switch input:checked + label {
+  color: #fff;
+  font-weight: 500;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.switch input:focus + label {
+  outline: none;
+}
+
+.switch .switch-button {
+  clear: both;
+  position: absolute;
+  top: -1px;
+  left: 0%;
+  z-index: 1;
+  width: 25%;
+  height: 100%;
+  margin: 2px;
+  background-color: #17a2b8;
+  background-image: linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.2),
+    rgba(0, 0, 0, 0)
+  );
+  border-radius: 3px;
+  /* border: 1px dashed rgba(0, 0, 0, 0.3); */
+  box-shadow: 0 0 0 3px #17a2b8, -2px 3px 5px #000;
+  transition: all 0.3s ease-out;
+}
+
+.switch input:last-of-type:checked ~ .switch-button {
+  left: 25%;
+}
+
+/* dropdown */
+.dropdown-menu {
+  min-width: max-content;
+}
+
+.dropdown-adm.show .dropdown-menu.show {
+  display: flex !important;
+  flex-wrap: wrap;
+  flex-direction: column;
+}

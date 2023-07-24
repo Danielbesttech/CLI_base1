@@ -1,0 +1,23 @@
+{
+  "name": "oversee/api",
+  "description": "api-rest-test",
+  "type": "project",
+  "license": "Free",
+  "authors": [
+    {
+      "name": "Matheus vieira"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "coffeecode/router": "^1.0",
+    "twig/twig": "3.0",
+    "enyo/dropzone": "dev-master",
+    "vlucas/phpdotenv": "^5.5@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "App/"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+:root {
+  /* cores padrão */
+  --primary: #cf7500;
+  --second: #ef4a23;
+  --third: #eb6a4d;
+  --fourth: #ff3232;
+  --fifth: #e8c40c;
+  /*----- */
+  --color-primaria: #e6230b;
+  --color-secundaria: #f74a28;
+  --color-terceira: #e0612f;
+  --color-quarta: #f77b28;
+  --color-quinta: #f0aa60;
+
+  --primary-titulo: #e6230b;
+
+  --primary-nav-color: white;
+  --primary-nav-hover: #e6230b;
+
+  --primary-nav-mobile-color: black;
+
+  --primary-nav: rgba(0, 0, 0);
+  --color-destaque: #efd510;
+
+  /* Altura menu */
+  --size-navbar: clamp(6rem, (8rem - 1vh), 10rem);
+
+  /* size-logo */
+  --size-logo: 6rem;
+
+  /* font-family padrão */
+
+  --font-size-body: 10px;
+  --font-family: "Poppins", sans-serif;
+  --min-width-body: 360px;
+
+  /* cardapio */
+
+  --size-img-cardapio: clamp(120px, 5vw, 160px);
+}

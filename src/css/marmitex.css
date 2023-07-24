@@ -1,0 +1,91 @@
+/* header */
+.section-marmitex {
+  min-height: 40rem;
+}
+
+.header-marmitex {
+  background: linear-gradient(rgba(0, 0, 0, 69%), rgba(0, 0, 0, 69%)),
+    url(../assets/images/marmitex/header-marmitex.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  min-height: 40rem;
+  display: flex;
+  justify-content: center;
+}
+
+.container-marmitex-header {
+  font-family: "The Girl Next Door";
+  font-size: 7rem;
+  color: var(--color-destaque);
+  display: flex;
+  align-items: center;
+  filter: grayscale(1);
+}
+
+/* body */
+
+.section-cardapio-marmitex {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 40%), rgba(0, 0, 0, 20%)),
+    url(../assets/images/marmitex/textura.jpg);
+  background-size: cover;
+}
+
+.container-marmitex {
+  color: var(--color-destaque);
+}
+
+.titulo-cardapio-marmitex {
+  text-align: center;
+  margin: 5rem 0;
+  font-size: 5rem;
+}
+
+.cardapio-dia-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cardapio-dia-right {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[class^="body-cardapio-dia"] {
+  /* backdrop-filter: brightness(0.5); */
+  background: #000000ad;
+  color: #c1c1c1;
+  padding: 2rem;
+  border-radius: 25px;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 30vw;
+}
+
+.body-cardapio-dia-right {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.cardapio-marmitex-dias {
+  font-size: 1.5rem;
+  font-family: "McLaren", cursive;
+  padding: 5rem 0;
+}
+
+.dia-cardapio-marmitex {
+  font-size: 2.5rem;
+  border-bottom: 2px solid;
+  color: var(--primary);
+}
+
+@media (max-width: 800px) {
+  [class^="body-cardapio-dia"] {
+    flex-direction: column;
+  }
+}

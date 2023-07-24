@@ -1,0 +1,102 @@
+{% extends '@base/main.html.twig' %} {% block header %}
+{{ parent() }}
+
+<link rel="stylesheet" href={{ ArrayCSS }} integrity="sha512-3OuH/9eh0Sx9s/c23ZFG5SJb3GvBluF9cdGgQXhZyMyId4GP87W9QBgkHmocx+8kZaCZmXQUUuLOD4Q4f5PaWQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %} {% block content %}
+
+<section class="section-header-home">
+
+  <div class="div-bg-home">
+    <div style="background: url('src/images/{{banner_principal}}'); background-size: contain; background-repeat: no-repeat; background-position: 0 60px; background-attachment: fixed; aspect-ratio: 4/1;"></div>
+  </div>
+  <div class="div-bg-home-mobile">
+    <div class=""></div>
+  </div>
+</section>
+
+<section class="section-header-info">
+  <div class="container-header-info">
+    <div class="info-titulo">
+      <h1 class="home-sub-title">EMPÓRIO<span class="home-destaque">TREMBÃO</span></h1>
+      <span class="home-sub-detalhes">É uma loja de produtos típicos de <span class="home-destaque">Minas Gerais</span>, onde prezamos a qualidade e o sabor para melhor atender nossos
+        clientes.</span>
+    </div>
+  </div>
+</section>
+
+<section class="section-lancamento-home">
+  <div class="container-lancamento">
+    <div class="lancamento-title">
+      <h1 class="subtitulo-categoria">Produtos em Destaque</h1>
+    </div>
+    <div class="cards-produtos">{% include '@home/destaques.html.twig' with Destaques %}</div>
+  </div>
+</section>
+
+<!-- Categorias -->
+<section class="section-categorias-home">
+  <div class="container">
+    <div class="categorias-title">
+      <h1 class="subtitulo-categoria">Categorias</h1>
+    </div>
+    <div class="cards-categorias">
+      <div class="categoria-base-size">
+        <a onclick="redirecionarPagina('produtos/index.php', 'iProduto=1')" class="div-card-categoria">
+          <div class="body-card-categoria" style="
+              background: url($URL_IMG_CATEGORIAS_PRODUTO/$id/$img_categoria);
+              background-size: cover;
+              background-repeat: no-repeat;
+              -webkit-transition: all 0.5s;
+              -moz-transition: all 0.5s;
+              -o-transition: all 0.5s;
+              transition: all 0.5s;
+            ">
+            <span class="btn-categoria"> TESTE </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Restaurante -->
+<section class="section-restaurante-home">{% include '@home/restaurante.html.twig' with Restaurante %}</section>
+
+<section class="section-formas-pagamentos">
+  <div class="container-formas-pagamentos">
+    <div class="titulo-formas-pagamentos">Formas de Pagamentos</div>
+    <div class="subtitulo-formas-pagamentos">Aceitamos pagamentos via cartão de crédito, débito, boleto e pix.</div>
+    <div class="body-formas-pagamentos">
+      <div class="formas-pagamentos">
+        <img src="src/images/pagamentos/elo.png" width="52px" alt="Cartão bandeira Elo" />
+      </div>
+      <div class="formas-pagamentos">
+        <img src="src/images/pagamentos/elo.png" width="52px" alt="Cartão bandeira MasterCard" />
+      </div>
+      <div class="formas-pagamentos">
+        <img src="src/images/pagamentos/elo.png" width="52px" alt="Cartão bandeira MasterCard Maestro" />
+      </div>
+      <div class="formas-pagamentos">
+        <img src="src/images/pagamentos/visa.png" width="52px" alt="Cartão bandeira Visa" />
+      </div>
+      <div class="formas-pagamentos">
+        <img src="src/images/pagamentos/hipercard.png" width="52px" alt="Cartão bandeira Hipercard" />
+      </div>
+      <div class="formas-pagamentos">
+        <img src="src/images/pagamentos/pix.png" width="52px" alt="Cartão via Pix" />
+      </div>
+      <div class="formas-pagamentos">
+        <img src="src/images/pagamentos/alelo.png" width="52px" alt="Vale refeição Alelo" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="espaco-bottom"></div>
+
+{% endblock %} {% block script %}
+{{ parent() }}
+<script language="JavaScript" src="src/js/home/destaques.js"></script>
+<script language="JavaScript" src="src/js/home/restaurante.js"></script>
+
+{% endblock %}

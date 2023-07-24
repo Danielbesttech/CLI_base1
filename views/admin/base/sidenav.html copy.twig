@@ -1,0 +1,30 @@
+<div id="div_select_unidades">
+  <div class="container-unidades">
+    <div class="unidades-icone">
+      <i class="fa-solid fa-house-medical-flag"></i>
+    </div>
+    <select name="id_unidade" id="id_unidade">
+
+      <option [SELECTED] value="[ID_UNIDADE]">[UNIDADE 1]</option>
+
+    </select>
+  </div>
+</div>
+
+<div class="menu_lateral">
+  <ul>
+    {% for navigation in rotas %}
+    <a id="[ID_MENU_PRINCIPAL]" href="{{ navigation.href }}">
+      <i class="{{ navigation.icone }}"></i>
+      <span>{{ navigation.item }}</span>
+    </a>
+    {% endfor %}
+
+    <li onclick="window.location.href='logout.php'">
+      <i class="fas fa-sign-out-alt"></i>
+      <span>Sair</span>
+    </li>
+  </ul>
+
+  <label>[USER_LOGADO]</label>
+</div>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/developer/src/css_admin/normalize.css" />
+  <link rel="stylesheet" href="/developer/src/css_admin/fontawesome-all.css" />
+  <link rel="stylesheet" href="/developer/src/css_admin/root.css" />
+  <link rel="stylesheet" href="/developer/src/css_admin/jquery-confirm.css" />
+  <link rel="stylesheet" href="/developer/src/css_admin/font.css" />
+  <link rel="stylesheet" href="/developer/src/css_admin/login.css" />
+  <title>Login</title>
+</head>
+
+<body>
+
+  <section class="login-area">
+    <center>
+
+      <!-- form action="#" method="post" -->
+      <div class="titulo">
+        <h4>Área de Login</h4>
+      </div>
+      <div class="area-dados">
+        <label for="login">Login <span>*</span></label>
+        <input type="text" placeholder="Digite seu login " name="login" id="login">
+      </div>
+      <div class="area-dados">
+        <label for="password">Senha <span>*</span></label>
+        <div class="senha">
+          <input type="password" placeholder="Digite sua senha" name="password" id="password">
+          <button title="Exibir a senha" class="bulleyes" onclick="verSenha();"><i class="far fa-eye"></i></button>
+        </div>
+      </div>
+      <footer>
+        <button title="Efetuar Login" onclick="efetuarLogin();" class="btn-logar">Logar</button>
+        <div class="esqueci-senha">
+          <a href="#">esqueci minha senha </a>
+        </div>
+      </footer>
+      <!-- /form -->
+    </center>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script language="JavaScript" src="/developer/src/js/fontawesome.min.js"></script>
+  <script language="JavaScript" src="/developer/src/js/funcoes.js"></script>
+
+  <script>
+    "use strict";
+    const input = document.getElementById("password");
+    const button = document.querySelector(".bulleyes");
+    const btnEye = document.querySelector('.bulleyes i');
+    button.addEventListener('click', togglePass);
+    function verSenha() {
+    }
+    function togglePass() {
+      if (input.type == "password") {
+        input.type = "text";
+      } else {
+        input.type = "password";
+      }
+      toggleIcone()
+    }
+
+    function toggleIcone() {
+      btnEye.classList.toggle('far');
+      btnEye.classList.toggle('fa-eye');
+      btnEye.classList.toggle('fas');
+      btnEye.classList.toggle('fa-eye-slash');
+    }
+
+    function efetuarLogin() {
+      var login = document.getElementById('login').value;
+      var senha = document.getElementById('password').value;
+      var preparaDados = {
+        "login": login,
+        "senha": senha
+      }
+      var dadosString = JSON.stringify(preparaDados);
+      var dados = btoa(dadosString)
+
+      var hostnameHref = location.href;
+      var urlLogar = hostnameHref.replace("login", "logar");
+      $.ajax({
+        type: "POST",
+        data: preparaDados,
+        url: urlLogar,
+        success: console.log(preparaDados)
+      });
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+APP_ENV = development
+
+URL_SITE = 'https://localhost/developer'
+
+DB_HOST     = 'localhost'
+DB_NAME     = 'emporiotrembao'
+DB_USER     = 'ss8o5ana9921fo'
+DB_PASSWORD = '#2skja092ksk#'

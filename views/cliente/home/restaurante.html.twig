@@ -1,0 +1,13 @@
+<div class="swiper swiper-restaurante">
+  <div class="swiper-wrapper">
+    {% for Item in Restaurante %}
+    <div class="swiper-slide">
+      <div class="banner-restaurante-cardapio">
+        <img src="src/images/restaurante/{{ Item.imagem }}" class="img-banner-restaurante" alt="" />
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="swiper-button-next color-primary"></div>
+  <div class="swiper-button-prev color-primary"></div>
+</div>
