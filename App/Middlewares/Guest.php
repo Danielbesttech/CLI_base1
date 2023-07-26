@@ -16,8 +16,7 @@ class Guest
         echo "<br>";
         echo "<br>";
         echo "<p><i>O middleware <b>Guest</b> foi executado!</i></p>";
-
-        die;
+      die;
         $guest = true;
         if ($guest) {
             return true;

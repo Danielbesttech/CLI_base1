@@ -10,6 +10,7 @@ use App\Model\geral;
 use App\Model\InfoGeral;
 use App\Model\Produtos;
 use App\Model\TipoProduto;
+use App\Utils\TestRedirect;
 use App\Utils\TwigUtils;
 
 class Inicio
@@ -29,13 +30,29 @@ class Inicio
       "categoria"  => "categoria",
       "produto"    => "produto",
     ];
+
+    $arrRotas = [
+
+    ];
     $this->twig = TwigUtils::carregaTwig("views/cliente", $arrViews);
+    // echo $this->router->route("rotas.quem_somos");
+    // die;
 
     self::loadHeader();
+    self::loadRotas();
   }
 
 
+  public function loadRotas(){
 
+    $this->params_global += [
+      'rotaHome' => $this->router->route("rotas.home"),
+      'rotaContato' => $this->router->route("rotas.contato"),
+      'rotaQuemSomos' => $this->router->route("rotas.quem_somos"),
+      'rotaCardapio' => $this->router->route("rotas.cardapio"),
+      'rotaRestaurante' => $this->router->route("rotas.restaurante"),
+    ];
+  }
 
 
 
@@ -71,8 +88,6 @@ class Inicio
     $this->params_global += ['banner_principal' => $Dados['banner_principal']];
     $this->params_global += ['Destaques' => $listaDestaques];
     $this->params_global += ['Restaurante' => $arrRestaurante];
-    $this->params_global += ['ArrayCSS' => 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.css'];
-    $this->params_global += ['ArrayGeral' => 'teste de css'];
 
     $arr = $this->params_global;
 
@@ -81,6 +96,7 @@ class Inicio
 
   public function Contato($data)
   {
+
     $InfoGeral = new InfoGeral();
 
     $Dados = $InfoGeral->procurar();
@@ -98,6 +114,7 @@ class Inicio
 
     $arr = $this->params_global;
 
+    // TestRedirect::redirecionarCoffee($this->router);
 
     echo $this->twig->render('@contato/index.html.twig', $arr);
   }
@@ -109,6 +126,7 @@ class Inicio
 
   public function QuemSomos($data)
   {
+
     $arr = $this->params_global;
 
     echo $this->twig->render('@quem_somos/index.html.twig', $arr);

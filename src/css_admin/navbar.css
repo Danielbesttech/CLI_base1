@@ -6,6 +6,7 @@ header {
   height: 30px;
   margin: 12px;
   border-radius: 25px;
+  background: linear-gradient(224deg, rgb(2 0 36 / 70%) 0%, rgb(0 0 139 / 70%) 35%, rgb(9 9 121 / 70%) 61%, rgb(100 149 237 / 70%) 100%);
 }
 
 .area_esquerda{
@@ -65,6 +66,9 @@ header {
   background: #4a4a4a;
   margin: -9px 12px;
   border-radius: 25px;
+  background: linear-gradient(224deg, rgb(2 0 36 / 70%) 0%, rgb(0 0 139 / 70%) 35%, rgb(9 9 121 / 70%) 61%, rgb(100 149 237 / 70%) 100%);
+  font-size: 1.2rem;
+  min-height: 30rem;
 }
 
 .sidebar .logotipo{

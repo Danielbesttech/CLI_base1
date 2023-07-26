@@ -1,0 +1,27 @@
+{% extends '@home/index.html.twig' %}
+{% block headStyle %}
+{{ parent() }}
+<link rel="stylesheet" href="/developer/src/css_admin/config.css" />
+
+{% endblock headStyle %}
+{% block content %}
+<main>
+  <div class="cabecalho">
+    <i class="fas fa-cogs" style="color: #009ED2"></i>
+    <h1>Configurações</h1>
+    <h2></h2>
+    <button type="button" class="voltar" data-tooltip="Voltar" onclick="redirecionarPagina('menu/index.php','menu_principal=CONFIGURACOES&amp;id_menu_principal=7')"><i class="fas fa-arrow-left"></i></button>
+  </div>
+  <section class="subtituloForm">
+    <h1>Informações do Mercado Pago</h1>
+    <h1 id="result" class="error"></h1>
+    <hr>
+  </section>
+  <form id="frm" name="frm" onsubmit="return false">
+
+    {% include "@config/form.html.twig" %}
+
+  </form>
+
+</main>
+{% endblock content %}

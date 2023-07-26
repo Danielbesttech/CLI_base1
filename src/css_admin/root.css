@@ -45,5 +45,12 @@
   --filter-nav-btn: drop-shadow(2px 4px 6px rgb(12, 12, 12));
 
   /*shadow*/
-  --shadow-nav-btn: 1px 1px 1px rgb(12, 12, 12);
+  --shadow-nav-btn: 0.5px 0.5px 0.5px rgb(12, 12, 12);
+
+
+  /*main*/
+
+  --main-cabecalho-titulo-font-size: 1.6rem;
+  --main-cabecalho-icone-font-size: 1.6rem;
+  --main-cabecalho-icone-voltar-font-size: 1.3rem;
 }

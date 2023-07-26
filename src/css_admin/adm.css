@@ -1,13 +1,21 @@
 body{
   background: var(--color-bg-primary);
+  font-size: 10px;
 }
 
-
-.idConteudo{
+.idConteudo {
   margin-left: 250px;
-  height: 100vh;
+  min-height: 100vh;
   transition: all 0.5s;
   max-width: 80vw;
+  padding: 95px 0 70px 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: 100%;
+  /* grid-template-rows: 50px 1fr; */
+  grid-template-areas: "main";
+  /* border: red solid; */
+  /* overflow: hidden; */
 }
 
 .isCheckedContent{

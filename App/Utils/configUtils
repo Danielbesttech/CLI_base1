@@ -1,5 +1,6 @@
 APP_ENV = development
 
+SISTEMA  = 'DEVELOPER'
 URL_SITE = 'https://localhost/developer'
 URL_ADM  = 'https://localhost/developer/admin'
 DB_HOST     = 'localhost'

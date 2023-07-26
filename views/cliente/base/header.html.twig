@@ -6,34 +6,35 @@
       </a>
     </div>
     <nav>
+
       <span class="open-nav-mobile" onclick="openNavMobile()">&#9776;</span>
       <ul class="nav-list large-response-menu">
         <div class="divide-navbar">
           <li>
-            <a id="menu-inicio" class="item-nav" href="home">Início</a>
+            <a id="menu-inicio" class="item-nav" href="{{rotaHome}}">Início</a>
           </li>
           <li>
-            <a id="menu-galeria" class="item-nav" href="quem-somos/">Quem Somos</a>
+            <a href="{{ rotaQuemSomos }}" class="item-nav">Quem Somos </a>
           </li>
           <li>
-            <a class="item-nav" id="id-nav-produto" href="categoria/12/">Produtos</a>
+            <a class="item-nav" id="id-nav-produto" href="/developer/categoria/12/">Produtos {{rotaCategoria}}</a>
             <ul class="nav-dropdown">
               <li>
-                <a class="item-nav" href="produtos/1" id="menu-produto">A</a>
+                <a class="item-nav" href="/developer/produtos/1" id="menu-produto">A</a>
               </li>
             </ul>
           </li>
 
           <li>
-            <a id="menu-cardapio" class="item-nav" href="cardapio">Cardápio</a>
+            <a id="menu-cardapio" class="item-nav" href="{{rotaCardapio}}">Cardápio</a>
           </li>
         </div>
         <div class="divide-navbar">
           <li>
-            <a id="menu-restaurante" class="item-nav">Nosso Restaurante</a>
+            <a id="menu-restaurante" href="{{rotaRestaurante}}" class="item-nav">Nosso Restaurante</a>
           </li>
           <li>
-            <a id="menu-contato" class="item-nav" href="contato/">Contato</a>
+            <a id="menu-contato" class="item-nav" href="{{rotaContato}}">Contato</a>
           </li>
         </div>
       </ul>
@@ -85,4 +86,6 @@
       }
     });
   }
+
+
 </script>
