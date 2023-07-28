@@ -35,7 +35,9 @@ $router->get("/logout", "Inicio:Logout", "rotasadmin.logout");
 $router->post('/logar', "Inicio:Logar", "rotasadmin.logar");
 
 //Rotas Menus Administrativos
-$router->get("/config", "Config:Home", "rotasadmin.config", Middlewares::AUTH);
+$router->group("admin/infogeral")->namespace("App\Controller\Admin\InfoGeral");
+$router->get("/", "InfoGeral:Home", "rotasadmin.infogeral", Middlewares::AUTH);
+$router->post("/atualizar", "InfoGeral:Atualizar", "rotasadmin.infogeral_atualizar", Middlewares::AUTH);
 
 //Executa as rotas
 $router->dispatch();

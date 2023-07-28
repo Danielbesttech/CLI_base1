@@ -4,23 +4,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="{{PATH_IMG_BASE}}favicon.ico" sizes="any">
+
   {% block header %}
-  <link rel="stylesheet" href="/developer/src/css/normalize.css" />
-  <link rel="stylesheet" href="/developer/src/css/fontawesome-all.css" />
-  <link rel="stylesheet" href="/developer/src/css/swiper-bundle.css" />
-  <link rel="stylesheet" href="/developer/src/css/root.css" />
-  <link rel="stylesheet" href="/developer/src/css/aos.min.css" />
-  <link rel="stylesheet" href="/developer/src/css/jquery-confirm.css" />
-  <link rel="stylesheet" href="/developer/src/css/site.css" />
-  <link rel="stylesheet" href="/developer/src/css/font.css" />
-  <link rel="stylesheet" href="/developer/src/css/home.css" />
-  <link rel="stylesheet" href="/developer/src/css/navbar.css" />
-  <link rel="stylesheet" href="/developer/src/css/marmitex.css" />
-  <link rel="stylesheet" href="/developer/src/css/cardapio.css" />
-  <link rel="stylesheet" href="/developer/src/css/galeria.css" />
-  <link rel="stylesheet" href="/developer/src/css/carrinho.css" />
-  <link rel="stylesheet" href="/developer/src/css/restaurante.css" />
-  <link rel="stylesheet" href="/developer/src/css/modal.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_SITE}}normalize.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_SITE}}fontawesome-all.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_SITE}}swiper-bundle.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_SITE}}root.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_SITE}}aos.min.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_SITE}}jquery-confirm.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_SITE}}site.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_SITE}}font.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_SITE}}home.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_SITE}}navbar.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_SITE}}marmitex.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_SITE}}cardapio.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_SITE}}galeria.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_SITE}}carrinho.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_SITE}}restaurante.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_SITE}}modal.css" />
   {% endblock header %}
 
   <title>{% block title %}Página Inicial{% endblock %}</title>
@@ -39,8 +41,8 @@
 {% block script %}
 <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js" integrity="sha512-0N/5ZOjfsh3niel+5dRD40HQkFOWaxoVzqMVAHnmAO2DC3nY/TFB7OYTaPRAFJ571IRS/XRsXGb2XyiFLFeu1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script language="JavaScript" src="/developer/src/js/fontawesome.min.js"></script>
-<script language="JavaScript" src="/developer/src/js/funcoes.js"></script>
+<script language="JavaScript" src="{{PATH_JS_SITE}}fontawesome.min.js"></script>
+<script language="JavaScript" src="{{PATH_JS_SITE}}funcoes.js"></script>
 {% endblock %}
 
 

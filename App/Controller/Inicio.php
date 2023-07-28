@@ -10,6 +10,7 @@ use App\Model\geral;
 use App\Model\InfoGeral;
 use App\Model\Produtos;
 use App\Model\TipoProduto;
+use App\Utils\Traits\PathsTrait;
 use App\Utils\TestRedirect;
 use App\Utils\TwigUtils;
 
@@ -38,13 +39,13 @@ class Inicio
     // echo $this->router->route("rotas.quem_somos");
     // die;
 
-    self::loadHeader();
+    $this->params_global = PathsTrait::loadPaths($this->params_global);
     self::loadRotas();
+    self::loadHeader();
   }
 
 
   public function loadRotas(){
-
     $this->params_global += [
       'rotaHome' => $this->router->route("rotas.home"),
       'rotaContato' => $this->router->route("rotas.contato"),
@@ -53,9 +54,6 @@ class Inicio
       'rotaRestaurante' => $this->router->route("rotas.restaurante"),
     ];
   }
-
-
-
 
   public function loadHeader()
   {
@@ -70,7 +68,7 @@ class Inicio
       }
     }
 
-    $this->params_global = ["RedesSociais" => $arr];
+    $this->params_global += ["RedesSociais" => $arr];
   }
 
   public function Home()

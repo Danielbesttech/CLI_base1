@@ -43,7 +43,7 @@
 
   /*filter*/
   --filter-nav-btn: drop-shadow(2px 4px 6px rgb(12, 12, 12));
-
+  --filter-modal-btn: drop-shadow(1px 2px 1px rgb(177,177,177));
   /*shadow*/
   --shadow-nav-btn: 0.5px 0.5px 0.5px rgb(12, 12, 12);
 

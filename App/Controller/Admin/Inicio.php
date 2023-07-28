@@ -6,27 +6,26 @@ use App\Middlewares\Auth as MiddlewaresAuth;
 use App\Model\geral;
 use App\Model\Usuarios;
 use App\Utils\TwigUtils;
-use App\Utils\AdmTrait;
+use App\Utils\Traits\PathsTrait;
 class Inicio
 {
+  use \App\Utils\Traits\AdmTrait;
   public $router, $base_css, $base_routers, $base_template, $params_global, $templates, $loader, $twig;
 
   public function __construct($router)
   {
+
     $this->router = $router;
-    // $arrViews = [
-    //   "base"  => "base",
-    //   "home"  => "home",
-    //   "login" => "login"
-    // ];
-    // $this->twig   = TwigUtils::carregaTwig("views/admin", $arrViews);
-    $this->twig = AdmTrait::carregaTwigAdm();
+    // $this->twig = AdmTrait::carregaTwigAdm();
+    $this->twig = self::carregaTwigAdm();
+    $this->params_global = PathsTrait::loadPaths($this->params_global);
     self::loadRotasAdmin();
+
   }
 
   public function loadRotasAdmin(){
-    return $this->params_global = [
-      "rotaAdmConfig" => $this->router->route("rotasadmin.config"),
+    return $this->params_global += [
+      "rotaAdmConfig" => $this->router->route("rotasadmin.infogeral"),
     ];
   }
 

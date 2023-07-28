@@ -1,0 +1,26 @@
+<!-- Modal -->
+<div class="modal fade" id="alert-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Informações</h4>
+        <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true">×</button>
+
+      </div>
+      <div class="modal-body">
+        <p>
+          <?=$texto_modal?>
+        </p>
+        <p>Em caso de dúvidas entre em contato com o suporte.</p>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-default btn-cancelar" data-dismiss="modal">Cancelar</button> -->
+        <button type="button" class="btn btn-danger btn-ok">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button hidden id="btnClickAlert" type="button" class="btn btn-danger" data-tooltip="<?= Language::$tooltip['EXCLUIR'] ?>" data-record-id="<?= $id_pedido; ?>" data-record-title="<?= $categoria; ?>" data-record-etiqueta="<?=$id_etiqueta?>" data-toggle="modal" data-target="#alert-modal">
+  <i class="far fa-trash-alt"></i>
+</button>

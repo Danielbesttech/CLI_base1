@@ -1,0 +1,157 @@
+.modal {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background: var(--cor-modal-bg);
+  color: var(--cor-modal-texto);
+  z-index: 99;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.closed {
+  display: none !important;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 98;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-header {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.modal-body {
+  text-align: center;
+}
+
+/* modal ir para */
+.modal-footer.footer-ir-para {
+  gap: 1rem;
+}
+
+.header-ir-para {
+  font-size: 2.5rem;
+}
+
+.modal-ir-para {
+  /* height: 40rem; */
+  /* width: 50rem; */
+  max-width: 95%;
+  max-height: 95%;
+  display: grid;
+  grid-template-columns: auto;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  border-radius: 10px;
+  background: var(--cor-container-bg);
+  color: var(--cor-container-texto);
+}
+
+.modal-continuar-comprando {
+  border: none;
+  border-bottom: solid 1px;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  cursor: pointer;
+  background: var(--cor-container-texto);
+  color: var(--cor-container-bg);
+  gap: 1rem;
+  padding: 1rem 2rem;
+  width: max-content;
+  margin: 0 auto;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.form-text {
+  display: grid;
+  gap: .5rem;
+}
+
+.body-ir-para {
+  font-size: 1.8rem;
+  opacity: 0.8;
+}
+
+/* avaliar */
+.modal-avaliar {
+  display: grid;
+  gap: 3rem;
+  width: 40rem;
+  max-width: 100%;
+  border-radius: 10px;
+  background: var(--cor-container-bg);
+  color: var(--cor-container-texto);
+}
+
+.body-avaliar {
+  display: grid;
+  text-align: left;
+  gap: 2rem;
+  align-items: baseline;
+}
+
+.produto-avaliacao {
+  font-size: 2rem;
+}
+
+.lbl-avaliacao-nome {
+  font-size: 1.5rem;
+}
+
+.input-avaliacao-nome {
+  font-size: 1.5rem;
+}
+
+.lbl-avaliacao-email {
+  font-size: 1.5rem;
+}
+
+.input-avaliacao-email {
+  font-size: 1.5rem;
+}
+
+.lbl-avaliacao-txt {
+  font-size: 1.5rem;
+}
+
+.input-avaliacao-txt {
+  font-size: 1.5rem;
+  resize: none;
+}
+
+.form-text-avaliacao {
+  display: grid;
+  justify-content: start;
+}
+
+.span-nota-avaliacao {
+  font-size: 1.5rem;
+}
+
+.nome-produto-avaliar {
+  font-size: 1.5rem;
+}
+
+.frm_avaliar {
+  display: grid;
+  gap: 3rem;
+}

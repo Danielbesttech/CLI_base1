@@ -4,18 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="{{PATH_IMG_BASE}}favicon.ico" sizes="any">
+
   {% block headStyle %}
-  <link rel="stylesheet" href="/developer/src/css_admin/normalize.css" />
-  <link rel="stylesheet" href="/developer/src/css_admin/fontawesome-all.css" />
-  <link rel="stylesheet" href="/developer/src/css_admin/root.css" />
-  <link rel="stylesheet" href="/developer/src/css_admin/jquery-confirm.css" />
-  <link rel="stylesheet" href="/developer/src/css_admin/font.css" />
-  <link rel="stylesheet" href="/developer/src/css_admin/adm.css" />
-  <link rel="stylesheet" href="/developer/src/css_admin/navbar.css" />
-  <link rel="stylesheet" href="/developer/src/css_admin/modal.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_ADM}}normalize.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_ADM}}fontawesome-all.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_ADM}}root.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_ADM}}jquery-confirm.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_ADM}}font.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_ADM}}adm.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_ADM}}navbar.css" />
+  <link rel="stylesheet" href="{{PATH_CSS_ADM}}modal.css" />
   {% endblock headStyle %}
 
-  <title>{% block title %}Página Inicial{% endblock %}</title>
+  <title>{% block title %}Página Inicial {% endblock %}</title>
 </head>
 
 <body id="body">
@@ -30,9 +32,10 @@
 {% block script %}
 <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js" integrity="sha512-0N/5ZOjfsh3niel+5dRD40HQkFOWaxoVzqMVAHnmAO2DC3nY/TFB7OYTaPRAFJ571IRS/XRsXGb2XyiFLFeu1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script language="JavaScript" src="/developer/src/js/fontawesome.min.js"></script>
-<script language="JavaScript" src="/developer/src/js/funcoes.js"></script>
-<script language="JavaScript" src="/developer/src/js/admin.js"></script>
+<script language="JavaScript" src="{{PATH_JS_SITE}}fontawesome.min.js"></script>
+<script language="JavaScript" src="{{PATH_JS_SITE}}funcoes.js"></script>
+<script language="JavaScript" src="{{PATH_JS_SITE}}admin.js"></script>
+<script language="JavaScript" src="{{PATH_JS_SITE}}modal.js"></script>
 {% endblock %}
 
 </html>

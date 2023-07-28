@@ -1,0 +1,165 @@
+<section>
+  <h2>Dados da loja física</h2>
+</section>
+<section>
+  <div class="campos">
+    <label for="endereco">Endereço <span>*</span></label>
+    <input type="text" name="endereco" id="endereco" value="{{DadosInfoGeral.endereco}}">
+    <span class="error"></span>
+
+  </div>
+  <div class="campos">
+    <label for="bairro">Bairro <span>*</span></label>
+    <input type="text" name="bairro" id="bairro" value="{{DadosInfoGeral.bairro}}">
+    <span class="error"></span>
+
+  </div>
+  <div class="campos">
+    <label for="cep">CEP <span>*</span></label>
+    <input type="text" name="cep" id="cep" value="{{DadosInfoGeral.cep}}">
+    <span class="error"></span>
+
+  </div>
+  <div class="campos">
+    <label for="cidade">Cidade <span>*</span></label>
+    <input type="text" name="cidade" id="cidade" value="{{DadosInfoGeral.cidade}}">
+    <span class="error"></span>
+
+  </div>
+  <div class="campos">
+    <label for="estado">Estado <span>*</span></label>
+    <input type="text" name="estado" id="estado" value="{{DadosInfoGeral.estado}}">
+    <span class="error"></span>
+
+  </div>
+</section>
+
+<section>
+  <h2>Integração Loja</h2>
+</section>
+<section>
+  <div class="campos">
+    <label for="token_loja">Token Loja <span>*</span></label>
+    <input type="text" name="token_loja" id="token_loja" value="{{DadosInfoGeral.token_loja}}">
+    <span class="error"></span>
+
+  </div>
+</section>
+
+<section>
+  <h2>Redes Sociais</h2>
+</section>
+<section>
+  <div class="campos">
+    <label for="youtube">Youtube <span>*</span></label>
+    <input type="text" name="youtube" id="youtube" value="{{DadosInfoGeral.youtube}}">
+    <span class="error"></span>
+
+  </div>
+  <div class="campos">
+    <label for="instagram">Instagram <span>*</span></label>
+    <input type="text" name="instagram" id="instagram" value="{{DadosInfoGeral.instagram}}">
+    <span class="error"></span>
+
+  </div>
+  <div class="campos">
+    <label for="facebook">Facebook <span>*</span></label>
+    <input type="text" name="facebook" id="facebook" value="{{DadosInfoGeral.facebook}}">
+    <span class="error"></span>
+
+  </div>
+  <div class="campos">
+    <label for="twitter">Twitter <span>*</span></label>
+    <input type="text" name="twitter" id="twitter" value="{{DadosInfoGeral.twitter}}">
+    <span class="error"></span>
+
+  </div>
+</section>
+
+<section>
+  <h2>Contato</h2>
+</section>
+<section>
+  <div class="campos">
+    <label for="titulo_contato">Título <span>*</span></label>
+    <input type="text" name="titulo_contato" id="titulo_contato" value="{{DadosInfoGeral.titulo_contato}}">
+    <span class="error"></span>
+
+  </div>
+  <div class="campos">
+    <label for="subtitulo1_contato">Subtítulo <span>*</span></label>
+    <input type="text" name="subtitulo1_contato" id="subtitulo1_contato" value="{{DadosInfoGeral.subtitulo1_contato}}">
+    <span class="error"></span>
+
+  </div>
+  <div class="campos">
+    <label for="descricao1_contato">Descrição <span>*</span></label>
+    <input type="text" name="descricao1_contato" id="descricao1_contato" value="{{DadosInfoGeral.descricao1_contato}}">
+    <span class="error"></span>
+
+  </div>
+  <div class="campos">
+    <label for="subtitulo2_contato">Subtítulo 2 <span>*</span></label>
+    <input type="text" name="subtitulo2_contato" id="subtitulo2_contato" value="{{DadosInfoGeral.subtitulo2_contato}}">
+    <span class="error"></span>
+
+  </div>
+  <div class="campos">
+    <label for="descricao2_contato">Descrição 2 <span>*</span></label>
+    <input type="text" name="descricao2_contato" id="descricao2_contato" value="{{DadosInfoGeral.descricao2_contato}}">
+    <span class="error"></span>
+
+  </div>
+  <div class="campos">
+    <label for="whatsapp">Whatsapp <span>*</span></label>
+    <input type="text" name="whatsapp" id="whatsapp" value="{{DadosInfoGeral.whatsapp}}">
+    <span class="error"></span>
+
+  </div>
+  <div class="campos">
+    <label for="telefone">Telefone <span>*</span></label>
+    <input type="text" name="telefone" id="telefone" value="{{DadosInfoGeral.telefone}}">
+    <span class="error"></span>
+
+  </div>
+</section>
+
+<section>
+  <h2>Localização</h2>
+</section>
+<section>
+  <div class="campos">
+    <label for="link_maps">Link Maps <span>*</span></label>
+    <input type="text" name="link_maps" id="link_maps" value="{{DadosInfoGeral.link_maps}}">
+    <span class="error"></span>
+
+  </div>
+</section>
+
+<section>
+  <div class="grid_50_50">
+    <div class="campos">
+      <div class="opcoes">
+        <input type="file" class="file" name="banner_principal" id="banner_principal">
+        <button type="button" onclick="$('#banner_principal').click()" class="escolher">Banner Principal (PC 4096x1024)</button>
+      </div>
+      <div class="preview_imagem">
+        <img id="preview_imagem_banner_principal" src="{{DadosInfoGeral.path_banner_principal}}" onerror=" if (this.src != '{{PATH_IMG_SEM}}') this.src='{{PATH_IMG_SEM}}';" alt="Banner Principal">
+      </div>
+    </div>
+    <div class="campos">
+      <div class="opcoes">
+        <input type="file" class="file" name="banner_mobile" id="banner_mobile">
+        <button type="button" onclick="$('#banner_mobile').click()" class="escolher">Banner Principal (Mobile 4096x2048 )</button>
+      </div>
+      <div class="preview_imagem">
+        <img id="preview_imagem_banner_mobile" src="{{DadosInfoGeral.path_banner_mobile}}" onerror=" if (this.src != '{{PATH_IMG_SEM}}') this.src='{{PATH_IMG_SEM}}';" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="opcoes">
+  <button type="button" class="salvar" data-tooltip="Clique para salvar" onclick="atualizarInfoGeral();">Alterar</button>
+</div>

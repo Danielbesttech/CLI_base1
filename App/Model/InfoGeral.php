@@ -4,6 +4,8 @@ namespace App\Model;
 
 class InfoGeral
 {
+  // use \App\Utils\Traits\SubirArquivoTrait;
+  use \App\Utils\Traits\SubirImagem;
   private $db;
 
   function __construct($db = null)
@@ -23,13 +25,8 @@ class InfoGeral
     }
     extract($arrayPost);
 
-    if (!$this->checar_Arquivo_Enviado(false, "banner_principal")) {
-      return false;
-    }
-
-    if (!$this->checar_Arquivo_Enviado(false, "banner_mobile")) {
-      return false;
-    }
+    $banner_principal = self::subirImagem( "PATH_IMG_INFOGERAL", "banner_principal");
+    $banner_mobile    = self::subirImagem( "PATH_IMG_INFOGERAL", "banner_mobile");
 
     $db = $this->db;
 
@@ -50,7 +47,9 @@ class InfoGeral
                   youtube              = ?,
                   facebook             = ?,
                   telefone             = ?,
-                  whatsapp             = ?
+                  whatsapp             = ?,
+                  banner_principal     = ?,
+                  banner_mobile        = ?
                 WHERE id = 1
                 ";
 
@@ -70,6 +69,8 @@ class InfoGeral
     $post[] = $facebook;
     $post[] = $telefone;
     $post[] = $whatsapp;
+    $post[] = $banner_principal;
+    $post[] = $banner_mobile;
     // $post[] = $titulo_banner;
     // $post[] = $texto_banner;
 
@@ -83,11 +84,12 @@ class InfoGeral
     }
 
     # Atualizou os dados, posso mover arquivo que subiu
-    $this->mover_arquivo_para_pasta_do_registro(1, "banner_principal");
-    $this->mover_arquivo_para_pasta_do_registro(1, "banner_mobile");
+    // $this->mover_arquivo_para_pasta_do_registro(1, "banner_principal");
+    // $this->mover_arquivo_para_pasta_do_registro(1, "banner_mobile");
 
     return true;
   }
+
 
   function alterarHistoria($arrayPost)
   {
@@ -152,6 +154,13 @@ class InfoGeral
     }
   }
 
+  // function subirImagem($nome_campo){
+  //   $dadosAnteriores = $this->procurar();
+  //   $subir_banner_principal = self::subir($_ENV['PATH_IMG_INFOGERAL'], "", $nome_campo, false, $dadosAnteriores[$nome_campo]);
+  //   $imagem = is_null(filter_var($subir_banner_principal, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE)) ? $subir_banner_principal : $dadosAnteriores[$nome_campo];
+  //   return $imagem;
+  // }
+
   /**
    *  Essa funcao pega o arquivo que foi postado e move para a pasta do material
    *  Ela é chamada após ser checado se o arquivo é válido.
@@ -201,7 +210,7 @@ class InfoGeral
     return true;
   }
 
-  function procurar()
+  public function procurar()
   {
     $db = $this->db;
     return $db->retornarArray($db->select("SELECT * from infogeral"), false);

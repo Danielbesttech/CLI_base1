@@ -1,0 +1,37 @@
+<!-- Modal -->
+<div class="modal fade" id="confirm-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Informações</h4>
+        <button type="button" class="close btn-close" data-dismiss="modal" aria-hidden="true">×</button>
+
+      </div>
+      <div class="modal-body">
+        <p>
+          <?=$texto_modal?>
+        </p>
+        <p>Deseja proceder?</p>
+      </div>
+      <div class="modal-footer" style="flex-wrap:nowrap !important;">
+        <button type="button" class="btn btn-default btn-cancelar" data-dismiss="modal">Cancelar</button>
+        <?
+        if(!empty($btn_esquerdo)){
+?>
+        <button type="button" class="btn btn-danger btn-esquerdo">
+          <?=$btn_esquerdo?>
+        </button>
+        <?
+        }
+?>
+        <button type="button" class="btn btn-danger btn-ok">
+          <?=$btn_direito?>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button hidden id="btnClick" type="button" class="btn btn-danger" data-tooltip="<?= Language::$tooltip['EXCLUIR'] ?>" data-record-id="<?= $id_pedido; ?>" data-record-title="<?= $categoria; ?>" data-record-etiqueta="<?=$id_etiqueta?>" data-toggle="modal" data-target="#confirm-modal">
+  <i class="far fa-trash-alt"></i>
+</button>
