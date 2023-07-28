@@ -28,11 +28,6 @@ function Logout() {
   var hostnameHref = location.href;
   var hostname = hostnameHref.replace("#", "");
   var urlLogout = hostname + '/logout';
-  // $.ajax({
-  //   type: "GET",
-  //   url: urlLogout,
-  //   success: ""
-  // })
   window.location.replace(urlLogout)
 
 }

@@ -46,6 +46,10 @@ function validarForm(id_form) {
         password: {
           valueMissing: "Por favor, insira a senha",
           typeMismatch: "Por favor, preencha uma senha válido",
+        },
+        file: {
+          valueMissing: "Por favor, insira uma imagem",
+          typeMismatch: "Por favor, insira uma imagem válida"
         }
       };
 
@@ -104,4 +108,21 @@ function inserirLoading(id_div) {
 
 function removerLoading() {
   document.getElementById("div-loading").remove();
+}
+
+function carregarImgNoCampo(id_input_file, id_img_preview) {
+
+  var preview = document.querySelector('#' + id_img_preview);
+  var file = document.querySelector('#' + id_input_file).files[0];
+  var reader = new FileReader();
+
+  reader.onloadend = function () {
+    preview.src = reader.result;
+  }
+
+  if (file) {
+    reader.readAsDataURL(file);
+  } else {
+    preview.src = "";
+  }
 }

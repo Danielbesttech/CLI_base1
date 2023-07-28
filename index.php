@@ -33,6 +33,7 @@ $router->get("/", "Inicio:Home",  "rotasadmin.home" , Middlewares::AUTH);
 $router->get("/login", "Inicio:Login", "rotasadmin.login");
 $router->get("/logout", "Inicio:Logout", "rotasadmin.logout");
 $router->post('/logar', "Inicio:Logar", "rotasadmin.logar");
+$router->post("/teste", "Inicio:Teste", "rotasadmin.teste");
 
 //Rotas Menus Administrativos
 $router->group("admin/infogeral")->namespace("App\Controller\Admin\InfoGeral");

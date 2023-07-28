@@ -5,7 +5,6 @@ namespace App\Controller\Admin;
 use App\Middlewares\Auth as MiddlewaresAuth;
 use App\Model\geral;
 use App\Model\Usuarios;
-use App\Utils\TwigUtils;
 use App\Utils\Traits\PathsTrait;
 class Inicio
 {
@@ -16,12 +15,21 @@ class Inicio
   {
 
     $this->router = $router;
-    // $this->twig = AdmTrait::carregaTwigAdm();
     $this->twig = self::carregaTwigAdm();
     $this->params_global = PathsTrait::loadPaths($this->params_global);
     self::loadRotasAdmin();
 
   }
+
+  /**
+  * Essa função é utilizada para ...
+  *
+  * @return array|false
+  */
+   public function Teste($data){
+
+    print json_encode($data);
+   }
 
   public function loadRotasAdmin(){
     return $this->params_global += [
@@ -29,10 +37,8 @@ class Inicio
     ];
   }
 
-
   public function Home($data){
 
-    // MiddlewaresAuth::verificaLogado($this->router);
     $arrAdm = $this->params_global;
     echo $this->twig->render('@home/index.html.twig', $arrAdm);
   }

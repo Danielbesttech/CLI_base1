@@ -171,3 +171,8 @@ main form .preview_imagem img, main form .preview_imagem_miniatura img, main for
   margin: 0 auto;
   max-height: 20rem;
 }
+
+.error{
+  font-size: 0.8rem;
+  color: orangered;
+}

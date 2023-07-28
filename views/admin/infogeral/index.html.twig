@@ -14,9 +14,9 @@
   </div>
   <section class="subtituloForm">
 
-    {% include "@modal/modal.html.twig" %}
+    {% include "@modal/modal_input.html.twig" %}
 
-    <h1>Informações do Mercado Pago</h1>
+    <h1>Informações Gerais</h1>
     <h1 id="result" class="error"></h1>
     <hr>
   </section>
@@ -32,92 +32,5 @@
 
 {% block script %}
 {{ parent() }}
-<script>
-  function carregarImgNoCampo(id_input_file, id_img_preview) {
-
-    var preview = document.querySelector('#' + id_img_preview);
-    var file = document.querySelector('#' + id_input_file).files[0];
-    var reader = new FileReader();
-
-    reader.onloadend = function () {
-      preview.src = reader.result;
-    }
-
-    if (file) {
-      reader.readAsDataURL(file);
-    } else {
-      preview.src = "";
-    }
-  }
-
-  $(document).ready(function () {
-
-    $('#banner_principal').on("change", function () {
-      carregarImgNoCampo('banner_principal', 'preview_imagem_banner_principal');
-    });
-    $('#banner_mobile').on("change", function () {
-      carregarImgNoCampo('banner_mobile', 'preview_imagem_banner_mobile');
-    });
-
-  });
-  //var btnAbre = document.getElementById('abreModal');
-  //var btnFecha = document.getElementById('fechaModal');
-  //const btnAbrirModal = document.getElementById('abreModal');
-  //const btnFechaModal = document.getElementById('fechaModal');
-  const modal = document.querySelector('dialog');
-  const fecharModal = document.querySelectorAll('.fechar-modal');
-  var titulo = document.querySelector('.titulo-modal')
-  var texto = document.querySelector('.modal-article')
-
-  console.log(modal)
-
-  fecharModal.forEach((btnfechar) => {
-    btnfechar.addEventListener("click", (e) => {
-      modal.close()
-    })
-  })
-
-  function modalInfo() {
-    var mensagem = document.createElement("p");
-    var tituloModal = document.createElement("span");
-    tituloModal.innerHTML = "Novo Titulo"
-    mensagem.innerHTML = "testando";
-    titulo.appendChild(tituloModal)
-    texto.appendChild(mensagem);
-    modal.showModal()
-    window.scrollTo(0, 0)
-    /* setTimeout(() => {
-       fecharModal[0].click()
-       location.reload()
-     }, 3000)*/
-  }
-
-  function atualizarInfoGeral() {
-
-    var formulario = document.getElementById('frm');
-    var formData = new FormData(formulario);
-    var linkMaps = document.getElementById('link_maps');
-
-    var urlSalvar = location.href + "/atualizar";
-
-    $.ajax({
-      type: 'POST',
-      data: formData,
-      url: urlSalvar,
-      cache: false,
-      contentType: false,
-      processData: false,
-      beforeSend: (data) => {
-        inserirLoading("preview_imagem_banner_mobile")
-      },
-      success: function (data) {
-        data = JSON.parse(data)
-        removerLoading();
-        modalInfo();
-      }
-    },
-    )
-  }
-
-</script>
+<script language="JavaScript" src="{{PATH_JS_SITE }}infogeral.js"></script>
 {% endblock script %}
